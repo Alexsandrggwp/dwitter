@@ -1,0 +1,73 @@
+body {
+
+    height: 120%;
+    background: linear-gradient(to right,mediumspringgreen,#24034A) ;
+}
+.containerHB {
+    width: 700px;
+    height: 110px;
+    background-color:  #462F61;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    position: center;
+    border: 5px solid #462F80;
+    border-radius: 50%;
+}
+h{
+    font-family: Mistral;
+    font-size:  85px;
+    color: paleturquoise;
+}
+.container{
+     width: 600px;
+     height: 270px;
+     background-color: #462F61;
+     margin: 100px auto 0 auto;
+     text-align: center;
+     position: center;
+     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+     border-radius: 5px;
+ }
+input[type="text"] {
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+p{
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:  21px;
+    color: paleturquoise;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    height: 60px;
+    padding-top: 5px;
+}
+.dsw-submit-registration{
+    padding: 13px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+    color: indigo;
+    background-color: mintcream;
+    border: none;
+    border-bottom: 4px solid mediumspringgreen;
+    cursor: pointer;
+    border-radius:5px;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+.dsw-submit-registration:hover{
+    transition: all 0.5s;
+    background-color: mediumslateblue;
+    color:mintcream ;
+    border-radius:10px;
+}
+h1{
+    font-size: 30px;
+    font-family: Mistral;
+    color: paleturquoise;
+    margin: 355px 0 20px 0;
+}

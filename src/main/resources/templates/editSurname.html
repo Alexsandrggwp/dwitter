@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link href="../static/css/styleEditProfile.css" th:href="@{/css/styleEditProfile.css}" rel="stylesheet">
+</head>
+<body>
+<div id="mainmenuprofile">
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+<div class="container">
+    <form method="post" th:action="@{/editSurname}">
+        <div class ="dws-input">
+            <p>Enter your new surname: <input class="inputclass" type="text" name="surname" placeholder="..." required></p>
+        </div>
+        <div class ="dws-input">
+            <input  class="dsw-submit-registration" type="submit" name="submit" value="Save data"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

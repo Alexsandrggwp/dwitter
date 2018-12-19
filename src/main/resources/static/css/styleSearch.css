@@ -1,0 +1,126 @@
+body{
+    max-height: 120%;
+    background: linear-gradient(to right,mediumspringgreen,#24034A) ;
+}
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#mainmenuprofile {
+    background: #444;
+    position:center;
+    overflow:hidden;
+    height:50px;
+    margin:5px 0
+}
+#mainmenuprofile ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    position: relative;
+    left:50%;
+    float:left;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 35px;
+    height:50px
+}
+#mainmenuprofile ul li {
+    position:relative;
+    left:-50%;
+    float:left;
+    margin:0 10px;
+    height:50px
+}
+#mainmenuprofile ul li a {
+    color: #fff;
+    display:block;
+    text-decoration:none;
+    padding:0 15px;
+    line-height: 50px;
+}
+#mainmenuprofile ul li a:hover {
+    background-color:#6A5ACD;
+    border-radius: 5px;
+}
+
+h{
+    font-family: Mistral;
+    font-size:  80px;
+    color: paleturquoise;
+
+}
+.containerHB {
+    width: 700px;
+    height: 110px;
+    background-color:  #462F61;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    position: center;
+    border: 5px solid #462F80;
+    border-radius: 50%;
+}
+.container {
+    width: 700px;
+    height: 880px;
+    padding-top: 2px;
+    background-color: #462F61;
+    margin: 10px auto 0 auto;
+    position: center ;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius: 10px;
+    padding-right: auto;
+}
+.dsw-submit-search{
+    padding: 5px 10px;
+    font-size: 15px;
+    color: mintcream;
+    background-color: mediumslateblue;
+    border: none;
+    border-bottom: 4px solid thistle;
+    cursor: pointer;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius:5px;
+    margin-top: -40px;
+    width: 800px;
+    height: 50px;
+}
+.dsw-submit-search:hover{
+    transition: all 0.5s;
+    background-color:paleturquoise;;
+    color:indigo ;
+    border-radius:10px;
+}
+.dws-input{
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin-right: 10px;
+
+}
+input[type="search"],input[type="submit"] {
+    width: 800px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 580px;
+    border-radius: 4px;
+    padding-left: 10px;
+    position: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+}
+input[type="submit"]{
+    width: 90px;
+    height: 50px;
+}
+p{  font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:  21px;
+    color: paleturquoise;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    height: 60px;
+}

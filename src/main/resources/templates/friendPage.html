@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--<link href="../static/css/styleMyProfile.css" th:href="@{/css/styleMyProfile.css}" rel="stylesheet">-->
+    <title>MyProfile</title>
+    <link rel="stylesheet" href="../static/css/styleMyProfile.css" th:href="@{/css/styleMyProfile.css}">
+</head>
+<body>
+<div id="mainmenuprofile">
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+<div class="containerUser" >
+    <div class="container img" >
+        <a target="_blank" href="css/klematis_big.html"><img th:src="'/photos/' + ${friend.photoPath}"  /></a>
+    </div>
+    <div class="containerInf">
+        <br><p>Name:</p><h3 th:text="${friend.username}">Pushok</h3>
+        <br><p>Surname:</p><h3 th:text="${friend.surname}">Kitecat</h3>
+        <div th:if="${friend.dateOfBirth != null}"><br><p>Day of Birth:</p><h3 th:text="${friend.dateOfBirth}">01.02.2011</h3></div>
+        <div th:if="${friend.sex != null}"><br><p>Sex:</p><h3 th:text="${friend.sex}">Male</h3></div>
+        <div th:if="${friend.country != null}"><br><p>Country:</p><h3 th:text="${friend.country}">Russia</h3></div>
+        <div th:if="${friend.town != null}"><br><p>Town:</p><h3 th:text="${friend.town}">Saratov</h3></div>
+        <div th:if="${friend.description != null}"><br><p>About me:</p> <h3 th:text="${friend.description}">Sexy catman</h3></div>
+    </div>
+</div>
+<div class="containerWR">
+    <h>Start chatting now 👾</h>
+</div>
+<div class="containerNews">
+    <div>
+        <div th:each="post : ${postList}" >
+            <div class="post123">
+                <h2 th:text="${post.text}">теперь я с вами</h2>
+                <div th:if="${post.id != postId}">
+                    <div class="dsw-submit-comment"><a th:href="@{'/friend?id=' + ${friend.id} + '&postId=' + ${post.id}}"><img class="containerIcon" src="../img/comments.png"></a></div>
+                </div>
+                <div th:if="${post.id == postId}">
+                    <div class="dsw-submit-comment"><a th:href="@{'/friend?id=' + ${friend.id}}"><img class="containerIcon" src="../img/comments.png"></a></div>
+                </div>
+            </div>
+            <div th:if="${post.id == postId}" th:each="comment : ${post.getPostComments()}" >
+                <div class="nameComentatora" th:text="${comment.commentedUser.username + ' ' + comment.commentedUser.surname}"></div><div class="comment" th:text="${comment.text}"></div>
+            </div>
+            <div th:if="${post.id == postId}">
+                <form method="post" action="/post" th:action="@{/friend}">
+                    <textarea type="text" name="text" placeholder="What news?"></textarea>
+                    <input type="hidden" name="postId" th:value="${post.id}">
+                    <input type="hidden" name="friendId" th:value="${friend.id}">
+                    <input  class="dsw-submit-sendnews" type="submit" name="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

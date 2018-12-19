@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProfile</title>
+    <link href="../static/css/styleMyFriends.css" th:href="@{/css/styleMyFriends.css}" rel="stylesheet">
+</head>
+<body>
+<div id="mainmenuprofile">
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+<div th:if="${loggedInUser.getReqFriends() != null}" th:each="reqFriend : ${loggedInUser.getReqFriends()}">
+    <div class="container img" >
+        <h4 th:if="${reqFriend.surname!=null}" th:text="${reqFriend.surname} + ' ' + ${reqFriend.username}">Мотофеев Иван</h4>
+        <h4 th:if="${reqFriend.surname==null}" th:text="${reqFriend.username}">Мотофеев Иван</h4>
+        <div class="dsw-submit-comment"><a th:href="@{'/addFriend?id=' + ${reqFriend.id}}">add this dude</a></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+body {
+
+    height: 120%;
+    background: linear-gradient(to right,mediumspringgreen,#24034A) ;
+}
+a{
+    color:aquamarine;
+    font-size: 20px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+a:hover{
+    text-decoration: none;
+
+
+}
+.container{
+    width: 400px;
+    height: 550px;
+    background-color: #462F61;
+    margin: 100px auto 0 auto;
+    text-align: center;
+    position: center;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius: 5px;
+}
+
+.container img{
+    background-color: #462F61;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 30px 0;
+    border: 5px solid #462F61;
+    border-radius: 50%;
+
+}
+.containerHB {
+    width: 700px;
+    height: 110px;
+    background-color:  #462F61;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    position: center;
+    border: 5px solid #462F80;
+    border-radius: 50%;
+}
+h{
+    font-family: Mistral;
+    font-size:  90px;
+    color: paleturquoise;
+}
+
+input[type="text"], input[type="password"]{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+
+}
+.dws-input{
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+.dsw-submit-sign{
+    padding: 13px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+    color: mintcream;
+    background-color: mediumslateblue;
+    border: none;
+    border-bottom: 4px solid thistle;
+    cursor: pointer;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+
+}
+.dsw-submit-sign:hover{
+    transition: all 0.5s;
+    background-color:mintcream;
+    color:indigo ;
+}
+.dsw-submit-registration{
+    padding: 13px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+    color: indigo;
+    background-color: mintcream;
+    border: none;
+    border-bottom: 4px solid mediumspringgreen;
+    cursor: pointer;
+    border-radius:5px;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+.dsw-submit-registration:hover{
+    transition: all 0.5s;
+    background-color: mediumslateblue;
+    color:mintcream ;
+    border-radius:10px;
+}
+
+.checkbox {
+    display: none;
+}
+/* Задаем внешний вид для нашего кастомного чекбокса. Все обязательные свойства прокомментированы, остальные же свойства меняйте по вашему усмотрению */
+.checkbox-custom {
+    position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+    width: 20px;             /* Обязательно задаем ширину */
+    height: 20px;            /* Обязательно задаем высоту */
+    border: 2px solid #ccc;
+    border-radius: 3px;
+
+}
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom,
+.label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    color: mediumspringgreen;
+}
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+.checkbox:checked + .checkbox-custom::before {
+    content: "";             /* Добавляем наш псевдоэлемент */
+    display: block;			 /* Делаем его блочным элементом */
+    position: absolute;      /* Позиционируем его абсолютным образом */
+    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    background: white;
+    border-radius: 2px;
+
+}
+h1{
+    font-size: 30px;
+    font-family: Mistral;
+    color: paleturquoise;
+    margin: 85px 0 20px 0;
+    position: center;
+}

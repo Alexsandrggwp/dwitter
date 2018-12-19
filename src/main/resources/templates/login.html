@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+
+    <title>HobNob.Authorization</title>
+</head>
+<body>
+<div class="containerHB">
+
+<h >HobNob</h>
+</div>
+<div class="container">
+    <img src="../img/men.png">
+    <form method="post" th:action="@{/login}">
+        <div class ="dws-input">
+            <input type="text" name="username" id="username" autofocus="autofocus" placeholder="Enter login...">
+        </div>
+        <div class ="dws-input">
+            <input type="password" name="password" id="password" placeholder="Enter password...">
+        </div>
+        <div class ="dws-submit-sign">
+            <input class="dsw-submit-sign" type="submit" value="Log in">
+        <br/>
+            <div>
+                <label>
+                    <input class="checkbox" type="checkbox" name="remember-me">
+                    <span class="checkbox-custom"></span>
+                    <span class="label">Remember me</span>
+                </label>
+            </div>
+            <div style="margin: 10px 0 30px 0">
+                <a href="/forgot">Forgot your password?</a>
+            </div>
+        </div>
+
+        <div >
+            <input class="dsw-submit-registration" type="button" name="submit"  value="Registration" onclick="location.href='http://localhost:8080/registration';">
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

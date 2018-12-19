@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProfile</title>
+    <link href="../static/css/styleMyFriends.css" th:href="@{/css/styleMyFriends.css}" rel="stylesheet">
+</head>
+<body>
+<div id="mainmenuprofile">
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+<div class="containerHB">
+    <div class="main">
+        <h>Search</h>
+    </div>
+</div>
+<div>
+    <form method="post" th:action="@{/find}">
+        <p>
+            <input  type="search" name="name" placeholder="Site search">
+            <input class="dsw-submit-search" style="margin-top: 0px; margin-left: 10px" type="submit" value="Search" >
+        </p>
+    </form>
+    <div th:if="${found != null}" th:each="friend : ${found}">
+    <div class="container img" >
+        <img th:src="'/photos/' + ${friend.photoPath}" class="img_friend">
+        <h4 th:text="${friend.surname} + ' ' + ${friend.username}">Мотофеев Иван</h4>
+        <div class="dsw-submit-comment"><a th:href="@{'/requestFriend?id=' + ${friend.id}}">add this dude</a></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+
+    height: 120%;
+    background: linear-gradient(to left, #24034A,mediumspringgreen) ;
+}
+.container {
+    width: 500px;
+    height: 880px;
+    padding-top: 2px;
+    background-color: #462F61;
+    margin: 10px auto 0 auto;
+    position: center ;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius: 10px;
+    padding-right: auto;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+input[type="radio"]{cursor: pointer}
+
+.containerHB {
+    width: 700px;
+    height: 110px;
+    background-color:  #462F61;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    position: center;
+    border: 5px solid #462F80;
+    border-radius: 50%;
+}
+p{
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:  21px;
+    color: paleturquoise;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    height: 60px;
+}
+h3{
+    position: center;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:  19px;
+    color: paleturquoise;
+    margin-top: -90px;
+    margin-left: 160px;
+}
+h{
+    font-family: Mistral;
+    font-size:  80px;
+    color: paleturquoise;
+
+}
+.dws-input{
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin-right: 10px;
+}
+.inputclass{float:right;margin-right:10px;}
+
+.dsw-submit-registration{
+    padding: 13px 30px;
+    margin: -5px 165px 20px 0;
+    font-size: 25px;
+    color: mintcream;
+    background-color: mediumslateblue;
+    border: none;
+    border-bottom: 4px solid thistle;
+    cursor: pointer;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius:5px;
+    float:right;
+}
+.dsw-submit-registration:hover{
+    transition: all 0.5s;
+    background-color:paleturquoise;;
+    color:indigo ;
+    border-radius:10px;
+}
+h1{
+    font-size: 30px;
+    font-family: Mistral;
+    color: paleturquoise;
+    margin: 130px 0 0 180px;
+
+}
+select {
+    width: 313px;
+    height: 45px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}

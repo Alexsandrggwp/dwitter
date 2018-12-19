@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+    <link rel="stylesheet" href="css/styleMyFriends.css" type="text/css">
+</head>
+<body>
+<div id="mainmenuprofile">
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+<div class="containerHB">
+    <div class="main">
+        <h>My Friends</h>
+    </div>
+</div>
+    <div th:each="friend : ${friends}">
+        <div class="container img" >
+            <img th:src="'/photos/' + ${friend.photoPath}" class="img_friend">
+            <h4 th:text="${friend.surname} + ' ' + ${friend.username}">Мотофеев Иван</h4>
+            <div class="dsw-submit-comment"><a th:href="@{'/friend?id=' + ${friend.id}}"><img class="containerIcon" src="../img/comments.png"></a></div>
+            <div class="dsw-submit-comment"><a th:href="@{'/deleteFriend?id=' + ${friend.id}}"><img class="containerIcon" src="../img/delete.png"></a></div>
+        </div>
+    </div>
+</body>
+</html>

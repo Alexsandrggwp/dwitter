@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProfile</title>
+    <link href="css/styleMyProfile.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styleMyProfile.css">
+</head>
+<body>
+<div id="mainmenuprofile">                                      
+    <ul>
+        <li><a href="/find"> Find friends</a></li>
+        <li><a href="/reqforme"> Requests for you</a></li>
+        <li><a href="/"> My Profile </a></li>
+        <li><a href="/friends"> My Friends </a></li>
+        <li><a href="/edit"> Edit Profile</a></li>
+        <li><a href="/logout"> Exit Profile </a></li>
+    </ul>
+</div>
+    <div class="containerUser" >
+         <div class="container img" ><img th:src="'/photos/' + ${loggedInUser.user.photoPath}">
+         </div>
+        <div class="containerInf">
+            <div><h1>My Profile</h1></div>
+            <br ><p>Name:</p><h3 th:text="${loggedInUser.user.username}">Pushok</h3>
+            <div><br><p>Surname:</p><h3 th:text="${loggedInUser.user.surname}">Kitecat</h3></div>
+            <div th:if="${loggedInUser.user.dateOfBirth != null}"><br><p>Day of Birth:</p><h3 th:text="${loggedInUser.user.dateOfBirth}" data-date-format="dd-MM-yyyy">01.02.2011</h3></div>
+            <div th:if="${loggedInUser.user.sex != null}"><br><p>Sex:</p><h3 th:text="${loggedInUser.user.sex}">Male</h3></div>
+            <div th:if="${loggedInUser.user.country != null}"><br><p>Country:</p><h3 th:text="${loggedInUser.user.country}">Russia</h3></div>
+            <div th:if="${loggedInUser.user.town != null}"><br><p>Town:</p><h3 th:text="${loggedInUser.user.town}">Saratov</h3></div>
+            <div th:if="${loggedInUser.user.description != null}"><br><p>About me:</p> <h3 th:text="${loggedInUser.user.description}">Sexy catman</h3></div>
+        </div>
+    </div>
+    <div class="containerNews">
+        <div class="containerWR">
+            <h>Start chatting now 👾</h>
+        </div>
+        <div class="containerWN">
+            <form method="post" action="/" th:action="@{/}">
+                <textarea type="text" name="text" placeholder="What news?"></textarea>
+                <input  class="dsw-submit-sendnews" type="submit" name="submit" value="Send">
+            </form>
+        </div>
+        <div class="News">
+            <div class="new" th:each="post : ${postList}">
+                <div class="post123">
+                    <h2 th:text="${post.text}">теперь я с вами</h2>
+                    <div th:if="${post.id != id}" class="dsw-submit-comment"><a th:href="@{'/post?id=' + ${post.id}}"><img class="containerIcon" src="../img/comments.png"></a></div>
+                    <div th:if="${post.id == id}" class="dsw-submit-comment"><a href="/"><img class="containerIcon" src="../img/comments.png"></a></div>
+                    <div class="dsw-submit-comment"><a th:href="@{'/deletePost?id=' + ${post.id}}"><img class="containerIcon" src="../img/delete.png"></a></div>
+                </div>
+                <div th:if="${post.id == id}" th:each="comment : ${post.getPostComments()}" >
+                    <div class="nameComentatora" th:text="${comment.commentedUser.username + ' ' + comment.commentedUser.surname}"></div><div class="comment" th:text="${comment.text}"></div>
+                </div>
+                <div th:if="${post.id == id}" >
+                    <form method="post" action="/post" th:action="@{/post}">
+                        <textarea type="text" name="text" placeholder="..."></textarea>
+                        <input type="hidden" name="id" th:value="${post.id}">
+                        <input  class="dsw-submit-sendComent" type="submit" name="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
